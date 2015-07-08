@@ -97,9 +97,9 @@ var Key = function() {
 Key.prototype.update = function(dt) {
     var grabKey = Math.abs(player.x - this.x);
     if (grabKey < 50.5 && this.y === player.y) {
-        console.log("You've got the key! Now quick, open the gate!");
+        alert("You've got the key! Great.. But you don't have a car! Run!");
         this.x = player.x;
-        this.y = player.y;
+        this.y += 83;
     }
 }
 
@@ -116,9 +116,9 @@ var damsel = function() {
 damsel.prototype.update = function(dt) {
     var rescueAttempt = Math.abs(player.x - this.x);
     if (rescueAttempt < 50.5 && this.y === player.y) {
-        console.log("This is no time for heroics! Every man for himself! Cross that street!");
+        alert("This is no time for heroics! Every man for himself! Cross that street!");
         this.x = player.x;
-        this.y = player.y;
+        this.y += 83;
     }
 }
 
