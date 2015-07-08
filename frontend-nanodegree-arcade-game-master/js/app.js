@@ -88,7 +88,7 @@ Player.prototype.handleInput = function(keyPress) {
     }
 }
 
-var Key = function() {
+/*var Key = function() {
     this.sprite = "images/Key.png";
     this.x = 100;
     this.y = 41.5;
@@ -105,7 +105,7 @@ var Key = function() {
 Key.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
-
+*/
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
