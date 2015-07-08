@@ -22,7 +22,7 @@ Enemy.prototype.update = function(dt) {
     // all computers.
     this.x += this.speed*dt;
 
-    if (this.x > 505) {
+    if (this.x > 707) {
         this.x = 0;
         this.y = Math.floor(Math.random()*4)*83 + 207.5;
         this.speed = Math.floor(Math.random()* 500) + 50;
@@ -110,7 +110,7 @@ Key.prototype.render = function() {
 var damsel = function() {
     this.sprite = 'images/char-princess-girl.png';
     this.x = 373.5;
-    this.y = 41.5;
+    this.y = 207.5;
 }
 
 damsel.prototype.update = function(dt) {
