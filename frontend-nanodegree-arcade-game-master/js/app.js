@@ -33,7 +33,7 @@ Enemy.prototype.update = function(dt) {
         player.x = 202;
         player.y = 539.5;
         player.score -= 1;
-        console.log("You should look both ways before crossing the street!" + "Score: " + player.score);
+        alert("You should look both ways before crossing the street!" + "Score: " + player.score);
     };
 }
 
@@ -75,7 +75,7 @@ Player.prototype.handleInput = function(keyPress) {
                 }
         else if (this.y < 83) {
             this.score += 1;
-            alert("You Made It!... I just hope you know how to swim." + " Score: " + this.score);
+            alert("You Made It!" + " Score: " + this.score);
             this.x = 202;
             this.y = 539.5;
         }
@@ -97,7 +97,9 @@ var Key = function() {
 Key.prototype.update = function(dt) {
     var grabKey = Math.abs(player.x - this.x);
     if (grabKey < 50.5 && this.y === player.y) {
-        alert("You've got the key! Now quick, open the gate!");
+        console.log("You've got the key! Now quick, open the gate!");
+        this.x = player.x;
+        this.y = player.y;
     }
 }
 
@@ -115,6 +117,8 @@ damsel.prototype.update = function(dt) {
     var rescueAttempt = Math.abs(player.x - this.x);
     if (rescueAttempt < 50.5 && this.y === player.y) {
         console.log("This is no time for heroics! Every man for himself! Cross that street!");
+        this.x = player.x;
+        this.y = player.y;
     }
 }
 
