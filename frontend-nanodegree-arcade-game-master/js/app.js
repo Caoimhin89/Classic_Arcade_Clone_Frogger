@@ -98,8 +98,8 @@ Key.prototype.update = function(dt) {
     var grabKey = Math.abs(player.x - this.x);
     if (grabKey < 50.5 && this.y === player.y) {
         alert("You've got the key! Now quick, open the gate!");
-        break;
     }
+    break;
 }
 
 Key.prototype.render = function() {
@@ -116,8 +116,8 @@ damsel.prototype.update = function(dt) {
     var rescueAttempt = Math.abs(player.x - this.x);
     if (rescueAttempt < 50.5 && this.y === player.y) {
         alert("This is no time for heroics! Every man for himself! Cross that street!");
-        break;
     }
+    break;
 }
 
 damsel.prototype.render = function() {
