@@ -98,7 +98,6 @@ var Key = function() {
 
     var grabKey = Math.abs(player.x - this.x);
     if (grabKey < 50.5 && this.y === player.y) {
-        this.sprite = display: none;
         alert("You've got the key! Now open the gate!");
     };
 }
