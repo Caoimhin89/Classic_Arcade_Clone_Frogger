@@ -75,7 +75,7 @@ Player.prototype.handleInput = function(keyPress) {
                 }
         else if (this.y < 42) {
             this.score += 1;
-            alert("You Made It!... I just hope you know how to swim." + this.score);
+            alert("You Made It!... I just hope you know how to swim." + " Score: " + this.score);
             this.x = 202;
             this.y = 373.5;
         }
@@ -102,7 +102,6 @@ var createEnemy = function(size) {
 
 player = new Player;
 
-key = new Key;
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
