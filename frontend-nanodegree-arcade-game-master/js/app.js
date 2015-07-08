@@ -33,7 +33,7 @@ Enemy.prototype.update = function(dt) {
         player.x = 202;
         player.y = 373.5;
         player.score -= 1;
-        alert("You should look both ways before crossing the street!" + player.score);
+        alert("You should look both ways before crossing the street!" + "Score: " + player.score);
     };
 }
 
@@ -88,24 +88,6 @@ Player.prototype.handleInput = function(keyPress) {
     }
 }
 
-/*var Key = function() {
-    this.sprite = "images/Key.png";
-    this.x = 100;
-    this.y = 41.5;
-}
-
- Key.prototype.update = function(dt) {
-
-    var grabKey = Math.abs(player.x - this.x);
-    if (grabKey < 50.5 && this.y === player.y) {
-        alert("You've got the key! Now open the gate!");
-    };
-};
-
-Key.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
-*/
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
