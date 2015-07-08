@@ -70,7 +70,7 @@ Player.prototype.handleInput = function(keyPress) {
         }
         break;
         case "up":
-                if (this.y > 124.5) {
+                if (this.y > 41.5) {
                     this.y -=83;
                 }
         else if (this.y < 83) {
