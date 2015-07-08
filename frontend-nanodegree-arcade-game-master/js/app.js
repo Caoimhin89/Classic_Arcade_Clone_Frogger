@@ -24,7 +24,7 @@ Enemy.prototype.update = function(dt) {
 
     if (this.x > 505) {
         this.x = 0;
-        this.y = Math.floor(Math.random()*3)*83 + 41.5;
+        this.y = Math.floor(Math.random()*4)*83 + 124.5;
         this.speed = Math.floor(Math.random()* 500) + 50;
     };
 
@@ -49,7 +49,7 @@ Enemy.prototype.render = function() {
 var Player = function() {
     this.sprite = "images/char-boy.png";
     this.x = 202;
-    this.y = 373.5;
+    this.y = 539.5;
     this.score = 0;
 }
 
@@ -65,7 +65,7 @@ Player.prototype.handleInput = function(keyPress) {
             this.x -= 101;
         }
         break;
-        case "right": if (this.x < 404) {
+        case "right": if (this.x < 606) {
             this.x += 101;
         }
         break;
@@ -77,11 +77,11 @@ Player.prototype.handleInput = function(keyPress) {
             this.score += 1;
             alert("You Made It!... I just hope you know how to swim." + " Score: " + this.score);
             this.x = 202;
-            this.y = 373.5;
+            this.y = 539.5;
         }
         break;
         case "down":
-                if (this.y < 373) {
+                if (this.y < 539.5) {
                     this.y += 83;
                 }
         break;
@@ -91,7 +91,7 @@ Player.prototype.handleInput = function(keyPress) {
 var Key = function() {
     this.sprite = 'images/Key.png';
     this.x = 202;
-    this.y = 171;
+    this.y = 124.5;
 }
 
 Key.prototype.update = function(dt) {
