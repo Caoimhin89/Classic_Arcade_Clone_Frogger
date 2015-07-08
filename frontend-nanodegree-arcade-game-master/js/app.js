@@ -73,7 +73,7 @@ Player.prototype.handleInput = function(keyPress) {
                 if (this.y > 124) {
                     this.y -=83;
                 }
-        else if (this.y < 40) {
+        else if (this.y < 124.5) {
             this.score += 1;
             alert("You Made It!... I just hope you know how to swim." + " Score: " + this.score);
             this.x = 202;
