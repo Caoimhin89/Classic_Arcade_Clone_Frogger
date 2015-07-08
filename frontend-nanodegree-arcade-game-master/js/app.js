@@ -94,13 +94,13 @@ var Key = function() {
     this.y = 41.5;
 }
 
- Key.prototype.update = function() {
+ Key.prototype.update = function(dt) {
 
     var grabKey = Math.abs(player.x - this.x);
     if (grabKey < 50.5 && this.y === player.y) {
         alert("You've got the key! Now open the gate!");
     };
-}
+};
 
 Key.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
