@@ -33,7 +33,7 @@ Enemy.prototype.update = function(dt) {
         player.x = 202;
         player.y = 373.5;
         player.score -= 1;
-        console.log("You should look both ways before crossing the street!" + player.score);
+        alert("You should look both ways before crossing the street!" + player.score);
     };
 }
 
@@ -75,7 +75,7 @@ Player.prototype.handleInput = function(keyPress) {
                 }
         else if (this.y < 42) {
             this.score += 1;
-            console.log("You Made It!" + this.score);
+            alert("You Made It!" + this.score);
             this.x = 202;
             this.y = 373.5;
         }
