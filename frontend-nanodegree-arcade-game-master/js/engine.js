@@ -111,13 +111,14 @@ var Engine = (function(global) {
         var rowImages = [
                 'images/grass-block.png',   // Top row is grass
                 'images/water-block.png',   // Row 1 of 1 of water
-                'images/stone-block.png',   // Row 1 of 3 of stone
-                'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
+                'images/stone-block.png',   // Row 1 of 4 of stone
+                'images/stone-block.png',   // Row 2 of 4 of stone
+                'images/stone-block.png',   // Row 3 of 4 of stone
+                'images/stone-block.png',   // Row 4 of 4 of stone
                 'images/grass-block.png',   // Row 1 of 2 of grass
                 'images/grass-block.png'    // Row 2 of 2 of grass
             ],
-            numRows = 7,
+            numRows = 8,
             numCols = 5,
             row, col;
 
