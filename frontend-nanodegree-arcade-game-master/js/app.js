@@ -109,8 +109,8 @@ Key.prototype.render = function() {
 
 var damsel = function() {
     this.sprite = 'images/char-princess-girl.png';
-    this.x = 373.5;
-    this.y = 207.5;
+    this.x = 207.5;
+    this.y = 373.5;
 }
 
 damsel.prototype.update = function(dt) {
