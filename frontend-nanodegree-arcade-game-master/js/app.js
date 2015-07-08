@@ -91,7 +91,7 @@ Player.prototype.handleInput = function(keyPress) {
 var Key = function() {
     this.sprite = 'images/Key.png';
     this.x = 202;
-    this.y = 41.5;
+    this.y = 62.5;
 }
 
 Key.prototype.update = function(dt) {
