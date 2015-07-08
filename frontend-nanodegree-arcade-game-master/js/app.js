@@ -105,20 +105,20 @@ Key.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
-var damselInDistress = function() {
+var damsel = function() {
     this.sprite = 'images/char-princess-girl.png';
     this.x = 373.5;
     this.y = 41.5;
 }
 
-damselInDistress.prototype.update = function(dt) {
+damsel.prototype.update = function(dt) {
     var rescueAttempt = Math.abs(player.x - this.x);
     if (rescueAttempt < 50.5 && this.y === player.y) {
         alert("This is no time for heroics! Every man for himself! Cross that street!");
     }
 }
 
-damselInDistress.prototype.render = function() {
+damsel.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
@@ -136,7 +136,7 @@ var createEnemy = function(size) {
 
 player = new Player;
 key = new Key
-damsel = new damselInDistress;
+damsel = new damsel;
 
 
 // This listens for key presses and sends the keys to your
