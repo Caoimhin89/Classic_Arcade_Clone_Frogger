@@ -88,6 +88,24 @@ Player.prototype.handleInput = function(keyPress) {
     }
 }
 
+var Key = function() {
+    this.sprite = 'images/Key.png';
+    this.x = 202;
+    this.y = 41.5;
+}
+
+Key.prototype.update = function(dt) {
+    var grabKey = Math.abs(player.x - this.x);
+    if (grabKey < 50.5 && this.y === player.y) {
+        key.display = none;
+        alert("You've got the key! Now quick, open the gate!");
+    };
+}
+
+Key.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+}
+
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
@@ -101,6 +119,7 @@ var createEnemy = function(size) {
 }(3);
 
 player = new Player;
+key = new Key
 
 
 // This listens for key presses and sends the keys to your
