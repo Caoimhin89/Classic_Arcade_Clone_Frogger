@@ -10,7 +10,7 @@ var Enemy = function() {
     this.speed = Math.floor(Math.random()* 500) + 50;
 
     if (this.x === 0) {
-        this.y = Math.floor(Math.random()*2.9)*83 + 41.5;
+        this.y = Math.floor(Math.random()*4)*83 + 207.5;
     };
 }
 
@@ -90,7 +90,7 @@ Player.prototype.handleInput = function(keyPress) {
 
 var Key = function() {
     this.sprite = 'images/Key.png';
-    this.x = 202;
+    this.x = 539.5;
     this.y = 207.5;
 }
 
@@ -107,7 +107,7 @@ Key.prototype.render = function() {
 
 var damsel = function() {
     this.sprite = 'images/char-princess-girl.png';
-    this.x = 404;
+    this.x = 373.5;
     this.y = 41.5;
 }
 
