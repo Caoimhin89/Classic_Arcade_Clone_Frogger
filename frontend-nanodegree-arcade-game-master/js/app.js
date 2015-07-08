@@ -98,7 +98,7 @@ Key.prototype.update = function(dt) {
     var grabKey = Math.abs(player.x - this.x);
     if (grabKey < 50.5 && this.y === player.y) {
         alert("You've got the key! Now quick, open the gate!");
-    };
+    }
 }
 
 Key.prototype.render = function() {
@@ -107,7 +107,7 @@ Key.prototype.render = function() {
 
 var damsel = function() {
     this.sprite = 'images/char-princess-girl.png';
-    this.x = 373.5;
+    this.x = 404;
     this.y = 41.5;
 }
 
