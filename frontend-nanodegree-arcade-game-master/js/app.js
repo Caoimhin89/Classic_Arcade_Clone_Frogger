@@ -31,9 +31,9 @@ Enemy.prototype.update = function(dt) {
     var collision = Math.abs(player.x - this.x);
     if (collision < 50.5 && this.y === player.y) {
         player.x = 202;
-        player.y = 373.5;
+        player.y = 539.5;
         player.score -= 1;
-        alert("You should look both ways before crossing the street!" + "Score: " + player.score);
+        console.log("You should look both ways before crossing the street!" + "Score: " + player.score);
     };
 }
 
@@ -114,7 +114,7 @@ var damsel = function() {
 damsel.prototype.update = function(dt) {
     var rescueAttempt = Math.abs(player.x - this.x);
     if (rescueAttempt < 50.5 && this.y === player.y) {
-        alert("This is no time for heroics! Every man for himself! Cross that street!");
+        console.log("This is no time for heroics! Every man for himself! Cross that street!");
     }
 }
 
