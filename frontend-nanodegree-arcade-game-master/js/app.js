@@ -24,7 +24,7 @@ Enemy.prototype.update = function(dt) {
 
     if (this.x > 505) {
         this.x = 0;
-        this.y = Math.floor()*3)*83 + 41.5;
+        this.y = Math.floor(Math.random()*3)*83 + 41.5;
         this.speed = Math.floor(Math.random()* 500) + 50;
     };
 
