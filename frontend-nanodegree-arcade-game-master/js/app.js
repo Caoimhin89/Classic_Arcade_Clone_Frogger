@@ -97,7 +97,8 @@ var Key = function() {
 Key.prototype.update = function(dt) {
     var grabKey = Math.abs(player.x - this.x);
     if (grabKey < 50.5 && this.y === player.y) {
-        key.display = none;
+        key.x = -50;
+        key.y = -50;
         alert("You've got the key! Now quick, open the gate!");
     };
 }
@@ -107,12 +108,16 @@ Key.prototype.render = function() {
 }
 
 var damselInDistress = function() {
-    this.sprite = "images/char-princess-girl.png";
-    this.x = 404;
+    this.sprite = 'images/char-princess-girl.png';
+    this.x = 373.5;
     this.y = 41.5;
 }
 
-damselInDistress.prototype.update = function(dt) {}
+damselInDistress.prototype.update = function(dt) {
+    var rescueAttempt = Math.abs(player.x - this.x);
+    if (rescueAttempt < 50.5 && this.y === player.y) {
+        alert("This is no time for heroics! Every man for himself! Cross that street!");
+}
 
 damselInDistress.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
