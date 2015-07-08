@@ -24,7 +24,7 @@ Enemy.prototype.update = function(dt) {
 
     if (this.x > 505) {
         this.x = 0;
-        this.y = Math.floor(Math.random()*4)*83 + 124.5;
+        this.y = Math.floor(Math.random()*4)*83 + 207.5;
         this.speed = Math.floor(Math.random()* 500) + 50;
     };
 
@@ -73,7 +73,7 @@ Player.prototype.handleInput = function(keyPress) {
                 if (this.y > 41.5) {
                     this.y -=83;
                 }
-        case: (this.y < 83) {
+        else if (this.y < 83) {
             this.score += 1;
             alert("You Made It!... I just hope you know how to swim." + " Score: " + this.score);
             this.x = 202;
@@ -91,7 +91,7 @@ Player.prototype.handleInput = function(keyPress) {
 var Key = function() {
     this.sprite = 'images/Key.png';
     this.x = 202;
-    this.y = 124.5;
+    this.y = 207.5;
 }
 
 Key.prototype.update = function(dt) {
@@ -103,6 +103,18 @@ Key.prototype.update = function(dt) {
 }
 
 Key.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+}
+
+var damselInDistress = function() {
+    this.sprite = "images/char-princess-girl.png";
+    this.x = 404;
+    this.y = 41.5;
+}
+
+damselInDistress.prototype.update = function(dt) {}
+
+damselInDistress.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
@@ -120,6 +132,7 @@ var createEnemy = function(size) {
 
 player = new Player;
 key = new Key
+damsel = new damselInDistress;
 
 
 // This listens for key presses and sends the keys to your
