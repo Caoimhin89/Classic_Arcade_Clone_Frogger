@@ -117,8 +117,8 @@ damsel.prototype.update = function(dt) {
     var rescueAttempt = Math.abs(player.x - this.x);
     if (rescueAttempt < 50.5 && this.y === player.y) {
         alert("This is no time for heroics! Every man for himself! Cross that street!");
-        this.x = player.x;
-        this.y += 83;
+        damsel.x = player.x;
+        damsel.y = (player.y - 83);
     }
 }
 
