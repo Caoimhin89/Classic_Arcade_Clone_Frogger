@@ -116,37 +116,37 @@ var damsel = function() {
 damsel.prototype.update = function(dt) {
     var rescueAttempt = Math.abs(player.x - this.x);
     if (rescueAttempt < 50.5 && this.y === player.y) {
-        alert("This is no time for heroics! Every man for himself! Cross that street!");
+        alert("Damsel in Distress: 'Please, help me cross the street!'");
         this.x = player.x + 101;
         this.y = player.y;
-        this.prototype.handleInput = function(keyPress) {
-    switch(keyPress) {
-        case "left": if (this.x > 0) {
-            this.x -= 101;
-        }
-        break;
-        case "right": if (this.x < 606) {
-            this.x += 101;
-        }
-        break;
-        case "up":
-                if (this.y > 41.5) {
-                    this.y -=83;
+        damsel.prototype.handleInput = function(keyPress) {
+            switch(keyPress) {
+                case "left": if (this.x > 0) {
+                    this.x -= 101;
                 }
-        else if (this.y < 83) {
-            this.score += 1;
-            alert("You Made It!" + " Score: " + this.score);
-            this.x = 202;
-            this.y = 539.5;
-        }
-        break;
-        case "down":
-                if (this.y < 539.5) {
-                    this.y += 83;
+                break;
+                case "right": if (this.x < 606) {
+                    this.x += 101;
                 }
-        break;
-    }
-}
+                break;
+                case "up":
+                        if (this.y > 41.5) {
+                            this.y -=83;
+                        }
+                else if (this.y < 83) {
+                    player.score += 5;
+                    alert("You rescued a damsel in distress!" + " Bonus Score: " + this.score);
+                    this.x = 207.5;
+                    this.y = 373.5;
+                }
+                break;
+                case "down":
+                        if (this.y < 539.5) {
+                            this.y += 83;
+                        }
+                break;
+            }
+        }
     }
 }
 
