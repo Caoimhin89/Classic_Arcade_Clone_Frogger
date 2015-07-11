@@ -135,6 +135,11 @@ damsel.prototype.update = function(dt) {
     if (this.y === player.y + 83 && this.x === player.x + 101) {
         this.y -= 83;
     }
+    if (this.y < 83) {
+            alert("You saved the damsel in distress!" + " Score: " + player.score);
+            this.x = 207.5;
+            this.y = 373.5;
+    }
 }
 
 /*damsel.prototype.handleInput = function(keyPress) {
