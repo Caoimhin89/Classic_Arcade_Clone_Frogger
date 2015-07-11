@@ -120,9 +120,24 @@ damsel.prototype.update = function(dt) {
         this.x = player.x + 101;
         this.y = player.y;
     }
+    if (this.x === player.x && this.x < 606) {
+        this.x += 101;
+    }
+    else {
+        this.x = player.x;
+    }
+    if (this.x === player.x - 101) {
+        this.x += 202;
+    }
+    if (this.y === player.y - 83) {
+        this.y += 83;
+    }
+    if (this.y === player.y + 83) {
+        this.y -= 83;
+    }
 }
 
-damsel.prototype.handleInput = function(keyPress) {
+/*damsel.prototype.handleInput = function(keyPress) {
     var escort = Math.abs(this.x - player.x);
     if (escort === 101 && this.y === player.y) {
         switch(keyPress) {
@@ -152,7 +167,8 @@ damsel.prototype.handleInput = function(keyPress) {
             break;
         }
     }
-}
+}*/
+
 damsel.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
