@@ -120,7 +120,7 @@ damsel.prototype.update = function(dt) {
         this.x = player.x + 101;
         this.y = player.y;
     }
-    if (this.x === player.x + 101 && this.y === player.y) {
+    if (this.x == player.x + 101 && this.y == player.y) {
         this.x = player.x + 101
         this.y = player.y
     }
