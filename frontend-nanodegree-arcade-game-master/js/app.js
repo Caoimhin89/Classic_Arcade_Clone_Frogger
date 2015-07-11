@@ -120,11 +120,15 @@ damsel.prototype.update = function(dt) {
         this.x = player.x + 101;
         this.y = player.y;
     }
-    if (this.x == player.x + 101 && this.y == player.y) {
+}
+
+var escort = function() {
+    if (this.x === player.x + 101 && this.y === player.y) {
         this.x = player.x + 101
         this.y = player.y
     }
 }
+escort();
 
 /*damsel.prototype.handleInput = function(keyPress) {
     var escort = Math.abs(this.x - player.x);
