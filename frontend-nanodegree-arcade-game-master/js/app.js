@@ -121,11 +121,8 @@ damsel.prototype.update = function(dt) {
         this.y = player.y;
     }
 }
-
 damsel.prototype.handleInput = function(keyPress) {
-    var escort = Math.abs(this.x - player.x);
-    if (escort === 101 && this.y === player.y) {
-        switch(keyPress) {
+    switch(keyPress) {
         case "left": if (this.x > 0) {
             this.x -= 101;
         }
@@ -150,7 +147,6 @@ damsel.prototype.handleInput = function(keyPress) {
                 this.y += 83;
             }
         break;
-        }
     }
 }
 
