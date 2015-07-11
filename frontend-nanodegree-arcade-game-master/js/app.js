@@ -119,21 +119,21 @@ damsel.prototype.update = function(dt) {
         alert("Damsel in Distress: 'Please, help me cross the street!'");
         this.x = player.x + 101;
         this.y = player.y;
-    }
-    if (this.x === player.x && this.x < 606) {
-        this.x += 101;
-    }
-    else {
-        this.x = player.x;
-    }
-    if (this.x === player.x - 101) {
-        this.x += 202;
-    }
-    if (this.y === player.y - 83) {
-        this.y += 83;
-    }
-    if (this.y === player.y + 83) {
-        this.y -= 83;
+        if (this.x === player.x && this.x < 606) {
+            this.x += 101;
+        }
+        else {
+            this.x = player.x;
+        }
+        if (this.x === player.x - 101) {
+            this.x += 202;
+        }
+        if (this.y === player.y - 83) {
+            this.y += 83;
+        }
+        if (this.y === player.y + 83) {
+            this.y -= 83;
+        }
     }
 }
 
