@@ -53,7 +53,12 @@ var Player = function() {
     this.score = 0;
 }
 
-Player.prototype.update = function(dt) {}
+Player.prototype.update = function(dt) {
+    var rescueAttempt = Math.abs(this.x - damsel.x);
+    if (rescueAttempt < 50.5 && damsel.y === damsel.y) {
+        damsel.x = this.x - 83;
+        damsel.y = this.y;
+}
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -117,8 +122,6 @@ damsel.prototype.update = function(dt) {
     var rescueAttempt = Math.abs(player.x - this.x);
     if (rescueAttempt < 50.5 && this.y === player.y) {
         alert("This is no time for heroics! Every man for himself! Cross that street!");
-        damsel.x = player.x;
-        damsel.y = (player.y - 83);
     }
 }
 
