@@ -10,8 +10,8 @@ var Enemy = function() {
 
     if (this.x === 0) {
         this.y = Math.floor(Math.random()*4)*83 + 207.5;
-    };
-}
+    }
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -25,7 +25,7 @@ Enemy.prototype.update = function(dt) {
         this.x = 0;
         this.y = Math.floor(Math.random()*4)*83 + 207.5;
         this.speed = Math.floor(Math.random()* 500) + 50;
-    };
+    }
 
 /*MY COMMENTS: For the Math.abs idea, I utilized this website: http://www.w3schools.com/jsref/jsref_abs.asp*/
 
@@ -35,13 +35,13 @@ Enemy.prototype.update = function(dt) {
         player.y = 539.5;
         player.score -= 1;
         alert("You should look both ways before crossing the street!" + "Score: " + player.score);
-    };
-}
+    }
+};
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -52,13 +52,13 @@ var Player = function() {
     this.x = 202;
     this.y = 539.5;
     this.score = 0;
-}
+};
 
-Player.prototype.update = function(dt) {}
+Player.prototype.update = function(dt) {};
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 /* MY COMMENTS: Here I used a switch statement, which I learned from "A Smarter Way
 to Learn JavaScript" by Mark Meyers. It saved me from some coding repetition and the
@@ -92,13 +92,13 @@ Player.prototype.handleInput = function(keyPress) {
                 }
         break;
     }
-}
+};
 
 var Key = function() {
     this.sprite = 'images/Key.png';
     this.x = 539.5;
     this.y = 207.5;
-}
+};
 
 Key.prototype.update = function(dt) {
     var grabKey = Math.abs(player.x - this.x);
@@ -107,17 +107,17 @@ Key.prototype.update = function(dt) {
         this.x = player.x;
         this.y += 83;
     }
-}
+};
 
 Key.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 var damsel = function() {
     this.sprite = 'images/char-princess-girl.png';
     this.x = 207.5;
     this.y = 373.5;
-}
+};
 
 /*MY COMMENTS: I'm not sure if it would be better to do a switch statement here,
 but in this case I chose to use repeated if statements because the logic was easier
@@ -151,7 +151,7 @@ damsel.prototype.update = function(dt) {
             this.x = 207.5;
             this.y = 373.5;
     }
-}
+};
 
 /* I originally tried to make the second character playable alongside the main hero
 upon meeting the below conditions in order to create the effect of the main hero
@@ -196,7 +196,7 @@ damsel.prototype.handleInput = function(keyPress) {
 
 damsel.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -207,11 +207,11 @@ var createEnemy = function(size) {
     hordeSize = size;
     for (i = 0; i < hordeSize; i++) {
         allEnemies.push(new Enemy);
-    };
+    }
 }(3);
 
 player = new Player;
-key = new Key
+key = new Key;
 damsel = new damsel;
 
 
