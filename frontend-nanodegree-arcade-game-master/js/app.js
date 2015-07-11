@@ -123,7 +123,7 @@ damsel.prototype.update = function(dt) {
     if (this.x === player.x && this.x < 606 && this.y === player.y) {
         this.x += 101;
     }
-    else if (this.x === player.x && this.x !< 606 && this.y === player.y) {
+    else if (this.x === player.x && this.x >= 606 && this.y === player.y) {
         this.x = player.x;
     }
     if (this.x === player.x - 101 && this.y === player.y) {
