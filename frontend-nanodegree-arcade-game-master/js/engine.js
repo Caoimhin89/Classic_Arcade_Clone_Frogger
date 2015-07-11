@@ -25,6 +25,9 @@ var Engine = (function(global) {
         ctx = canvas.getContext('2d'),
         lastTime;
 
+/* MY COMMENTS: I decided to increase the size of the canvas to 
+make the game more challenging */
+
     canvas.width = 707;
     canvas.height = 948;
     doc.body.appendChild(canvas);
@@ -90,6 +93,8 @@ var Engine = (function(global) {
      * the data/properties related to  the object. Do your drawing in your
      * render methods.
      */
+
+/* MY COMMENTS: Here I added the new game elements 'key' and 'damsel' */
     function updateEntities(dt) {
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
@@ -109,6 +114,11 @@ var Engine = (function(global) {
         /* This array holds the relative URL to the image used
          * for that particular row of the game level.
          */
+
+/*MY COMMENTS: Here I added several rows and columns to make the game more
+challenging. I added another lane of bug traffic and put some dry land on
+the other side of the river. */
+
         var rowImages = [
                 'images/grass-block.png',   // Top row is grass
                 'images/grass-block.png',   // Row 2 of 2 of grass
@@ -155,7 +165,7 @@ var Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
-
+/*MY COMMENTS: Again, here I added the new game elements 'key' and 'damsel' */
         player.render();
         key.render();
         damsel.render();
@@ -173,6 +183,9 @@ var Engine = (function(global) {
      * draw our game level. Then set init as the callback method, so that when
      * all of these images are properly loaded our game will start.
      */
+
+/*MY COMMENTS: And again, I added the sprites pointing to the new game elements
+'key' and 'damsel'*/
     Resources.load([
         'images/stone-block.png',
         'images/water-block.png',

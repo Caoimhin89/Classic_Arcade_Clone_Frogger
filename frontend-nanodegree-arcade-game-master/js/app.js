@@ -1,10 +1,9 @@
 // Enemies our player must avoid
 var Enemy = function() {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
 
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
+    /*MY COMMENTS: For this code I relied on "A Smarter Way to Learn JavaScript"
+    by Mark Meyers for the Math.floor and Math.random idea*/
+
     this.sprite = 'images/enemy-bug.png';
     this.x = 0;
     this.speed = Math.floor(Math.random()* 500) + 50;
@@ -27,6 +26,8 @@ Enemy.prototype.update = function(dt) {
         this.y = Math.floor(Math.random()*4)*83 + 207.5;
         this.speed = Math.floor(Math.random()* 500) + 50;
     };
+
+/*MY COMMENTS: For the Math.abs idea, I utilized this website: http://www.w3schools.com/jsref/jsref_abs.asp*/
 
     var collision = Math.abs(player.x - this.x);
     if (collision < 50.5 && this.y === player.y) {
@@ -58,6 +59,11 @@ Player.prototype.update = function(dt) {}
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
+
+/* MY COMMENTS: Here I used a switch statement, which I learned from "A Smarter Way
+to Learn JavaScript" by Mark Meyers. It saved me from some coding repetition and the
+logic of this code was pretty straight forward and uncomplicated, so I didn't really
+need the if statements to keep my thoughts straight. */
 
 Player.prototype.handleInput = function(keyPress) {
     switch(keyPress) {
@@ -113,6 +119,10 @@ var damsel = function() {
     this.y = 373.5;
 }
 
+/*MY COMMENTS: I'm not sure if it would be better to do a switch statement here,
+but in this case I chose to use repeated if statements because the logic was easier
+for me to follow. */
+
 damsel.prototype.update = function(dt) {
     var rescueAttempt = Math.abs(player.x - this.x);
     if (rescueAttempt < 50.5 && this.y === player.y) {
@@ -143,7 +153,16 @@ damsel.prototype.update = function(dt) {
     }
 }
 
-/*damsel.prototype.handleInput = function(keyPress) {
+/* I originally tried to make the second character playable alongside the main hero
+upon meeting the below conditions in order to create the effect of the main hero
+escorting the princess across the street by tying her movements to the same handleInput
+method that the main hero is tied to. However it did not work and I am not sure why. But
+I finally came up with the if statement method to acheive the same effect and implemented
+it in the code above. */
+
+/* Code that did not work:
+
+damsel.prototype.handleInput = function(keyPress) {
     var escort = Math.abs(this.x - player.x);
     if (escort === 101 && this.y === player.y) {
         switch(keyPress) {
