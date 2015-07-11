@@ -153,47 +153,6 @@ damsel.prototype.update = function(dt) {
     }
 };
 
-/* I originally tried to make the second character playable alongside the main hero
-upon meeting the below conditions in order to create the effect of the main hero
-escorting the princess across the street by tying her movements to the same handleInput
-method that the main hero is tied to. However it did not work and I am not sure why. But
-I finally came up with the if statement method to acheive the same effect and implemented
-it in the code above. */
-
-/* Code that did not work:
-
-damsel.prototype.handleInput = function(keyPress) {
-    var escort = Math.abs(this.x - player.x);
-    if (escort === 101 && this.y === player.y) {
-        switch(keyPress) {
-            case "left": if (this.x > 0) {
-                this.x -= 101;
-            }
-            break;
-            case "right": if (this.x < 606) {
-                this.x += 101;
-            }
-            break;
-            case "up":
-                if (this.y > 41.5) {
-                    this.y -=83;
-                }
-            else if (this.y < 83) {
-                player.score += 5;
-                alert("You rescued a damsel in distress!" + " Bonus Score: " + this.score);
-                this.x = 207.5;
-                this.y = 373.5;
-            }
-            break;
-            case "down":
-                if (this.y < 539.5) {
-                    this.y += 83;
-                }
-            break;
-        }
-    }
-}*/
-
 damsel.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
