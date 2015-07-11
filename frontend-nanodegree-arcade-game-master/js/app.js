@@ -123,8 +123,9 @@ damsel.prototype.update = function(dt) {
 }
 
 damsel.prototype.handleInput = function(keyPress) {
-    var escort = Math.abs(this.x - player.x);
+ /*   var escort = Math.abs(this.x - player.x);
     if (escort === 101 && this.y === player.y) {
+        */
         switch(keyPress) {
         case "left": if (this.x > 0) {
             this.x -= 101;
