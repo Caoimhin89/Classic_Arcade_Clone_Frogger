@@ -122,18 +122,9 @@ damsel.prototype.update = function(dt) {
     }
 }
 
-var escort = function() {
-    if (this.x === player.x + 101 && this.y === player.y) {
-        this.x = player.x + 101
-        this.y = player.y
-    }
-}
-escort();
-
-/*damsel.prototype.handleInput = function(keyPress) {
+damsel.prototype.handleInput = function(keyPress) {
     var escort = Math.abs(this.x - player.x);
     if (escort === 101 && this.y === player.y) {
-
         switch(keyPress) {
             case "left": if (this.x > 0) {
                 this.x -= 101;
@@ -162,7 +153,6 @@ escort();
         }
     }
 }
-*/
 damsel.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
