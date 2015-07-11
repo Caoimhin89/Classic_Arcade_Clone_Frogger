@@ -120,8 +120,13 @@ damsel.prototype.update = function(dt) {
         this.x = player.x + 101;
         this.y = player.y;
     }
+    if (this.x === player.x + 101 && this.y === player.y) {
+        this.x = player.x + 101
+        this.y = player.y
+    }
 }
-damsel.prototype.handleInput = function(keyPress) {
+
+/*damsel.prototype.handleInput = function(keyPress) {
     var escort = Math.abs(this.x - player.x);
     if (escort === 101 && this.y === player.y) {
 
@@ -153,7 +158,7 @@ damsel.prototype.handleInput = function(keyPress) {
         }
     }
 }
-
+*/
 damsel.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
