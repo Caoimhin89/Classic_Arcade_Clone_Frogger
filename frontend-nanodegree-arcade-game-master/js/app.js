@@ -119,7 +119,7 @@ damsel.prototype.update = function(dt) {
         alert("Damsel in Distress: 'Please, help me cross the street!'");
         this.x = player.x + 101;
         this.y = player.y;
-        damsel.prototype.handleInput = function(keyPress) {
+        this.prototype.handleInput = function(keyPress) {
             switch(keyPress) {
                 case "left": if (this.x > 0) {
                     this.x -= 101;
