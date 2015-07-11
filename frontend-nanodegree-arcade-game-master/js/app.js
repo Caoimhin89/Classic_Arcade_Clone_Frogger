@@ -122,31 +122,35 @@ damsel.prototype.update = function(dt) {
     }
 }
 damsel.prototype.handleInput = function(keyPress) {
-    switch(keyPress) {
-        case "left": if (this.x > 0) {
-            this.x -= 101;
-        }
-        break;
-        case "right": if (this.x < 606) {
-            this.x += 101;
-        }
-        break;
-        case "up":
-            if (this.y > 41.5) {
-                this.y -=83;
+    var escort = Math.abs(this.x - player.x);
+    if (escort === 101 && this.y === player.y) {
+
+        switch(keyPress) {
+            case "left": if (this.x > 0) {
+                this.x -= 101;
             }
-        else if (this.y < 83) {
-            player.score += 5;
-            alert("You rescued a damsel in distress!" + " Bonus Score: " + this.score);
-            this.x = 207.5;
-            this.y = 373.5;
-        }
-        break;
-        case "down":
-            if (this.y < 539.5) {
-                this.y += 83;
+            break;
+            case "right": if (this.x < 606) {
+                this.x += 101;
             }
-        break;
+            break;
+            case "up":
+                if (this.y > 41.5) {
+                    this.y -=83;
+                }
+            else if (this.y < 83) {
+                player.score += 5;
+                alert("You rescued a damsel in distress!" + " Bonus Score: " + this.score);
+                this.x = 207.5;
+                this.y = 373.5;
+            }
+            break;
+            case "down":
+                if (this.y < 539.5) {
+                    this.y += 83;
+                }
+            break;
+        }
     }
 }
 
