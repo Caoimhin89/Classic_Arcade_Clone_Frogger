@@ -36,6 +36,13 @@ Enemy.prototype.update = function(dt) {
         player.score -= 1;
         alert("You should look both ways before crossing the street!" + "Score: " + player.score);
     }
+    var missionFail = Math.abs(damsel.x - this.x);
+    if (missionFail < 50.5 && this.y === damsel.y && player.x === damsel.x && damsel.y === player.y + 83) {
+        damsel.x = 303;
+        damsel.y = 539.5;
+        player.score -= 1;
+        alert("Oooo, that looks like it hurt. Go back and save her!" + " Score: " + player.score)
+    }
 };
 
 // Draw the enemy on the screen, required method for game
