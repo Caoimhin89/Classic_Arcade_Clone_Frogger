@@ -136,13 +136,13 @@ damsel.prototype.update = function(dt) {
     if (this.x === player.x && this.y === player.y + 166) {
         this.y -= 83;
     }
-    if (this.y === player.y - 166 && this.x === player.x) {
+    if (this.x === player.x && this.y === player.y - 166) {
         this.y += 83;
     }
-    if (this.y === player.y + 83 && this.x === player.x - 101) {
+    if (this.x === player.x - 101 && this.y === player.y + 83) {
         this.x += 101;
     }
-    if (this.y === player.y + 83 && this.x === player.x + 101) {
+    if (this.x === player.x + 101 && this.y === player.y + 83) {
         this.x -= 101;
     }
     if (this.y < 83) {
