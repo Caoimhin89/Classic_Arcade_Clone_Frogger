@@ -127,23 +127,23 @@ damsel.prototype.update = function(dt) {
     var rescueAttempt = Math.abs(player.x - this.x);
     if (rescueAttempt < 50.5 && this.y === player.y) {
         alert("Damsel in Distress: 'Please, help me cross the street!'");
-        this.x = player.x + 101;
-        this.y = player.y;
-    }
-    if (this.x === player.x && this.x < 606 && this.y === player.y) {
-        this.x += 101;
-    }
-    else if (this.x === player.x && this.x >= 606 && this.y === player.y) {
         this.x = player.x;
+        this.y = player.y + 83;
     }
-    if (this.x === player.x + 202 && this.y === player.y) {
-        this.x -= 101;
-    }
-    if (this.y === player.y - 83 && this.x === player.x + 101) {
+    if (this.x === player.x && this.y === player.y) {
         this.y += 83;
     }
-    if (this.y === player.y + 83 && this.x === player.x + 101) {
+    if (this.x === player.x && this.y === player.y + 166) {
         this.y -= 83;
+    }
+    if (this.y === player.y - 166 && this.x === player.x) {
+        this.y += 83;
+    }
+    if (this.y === player.y + 83 && this.x === player.x - 101) {
+        this.x += 101;
+    }
+    if (this.y === player.y + 83 && this.x === player.x + 101) {
+        this.x -= 101;
     }
     if (this.y < 83) {
             player.score += 1;
