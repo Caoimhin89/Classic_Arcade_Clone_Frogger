@@ -64,7 +64,8 @@ Player.prototype.render = function() {
 to Learn JavaScript" by Mark Meyers. It saved me from some coding repetition and the
 logic of this code was pretty straight forward and uncomplicated, so I didn't really
 need the if statements to keep my thoughts straight. */
-var control = function(keyPress) {
+
+Player.prototype.handleInput = function(keyPress) {
     switch(keyPress) {
         case "left": if (this.x > 0) {
             this.x -= 101;
@@ -92,35 +93,6 @@ var control = function(keyPress) {
         break;
     }
 };
-
-Player.prototype.handleInput = control(keyPress);
-/*    switch(keyPress) {
-        case "left": if (this.x > 0) {
-            this.x -= 101;
-        }
-        break;
-        case "right": if (this.x < 606) {
-            this.x += 101;
-        }
-        break;
-        case "up":
-                if (this.y > 41.5) {
-                    this.y -=83;
-                }
-        else if (this.y < 83) {
-            this.score += 1;
-            alert("You Made It!" + " Score: " + this.score);
-            this.x = 202;
-            this.y = 539.5;
-        }
-        break;
-        case "down":
-                if (this.y < 539.5) {
-                    this.y += 83;
-                }
-        break;
-    } 
-}; */
 
 var Key = function() {
     this.sprite = 'images/Key.png';
@@ -159,7 +131,8 @@ damsel.prototype.update = function(dt) {
         alert("Damsel in Distress: 'Please, help me cross the street!'");
     }
     if (coupled === true) {
-        this.prototype.handleInput = control(keyPress);
+        this.prototype.handleInput = player.prototype.handleInput;
+    }
     }
 /*        this.x = player.x + 101;
         this.y = player.y;
