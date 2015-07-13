@@ -64,8 +64,7 @@ Player.prototype.render = function() {
 to Learn JavaScript" by Mark Meyers. It saved me from some coding repetition and the
 logic of this code was pretty straight forward and uncomplicated, so I didn't really
 need the if statements to keep my thoughts straight. */
-
-Player.prototype.handleInput = function(keyPress) {
+var control = function(keyPress) {
     switch(keyPress) {
         case "left": if (this.x > 0) {
             this.x -= 101;
@@ -91,8 +90,37 @@ Player.prototype.handleInput = function(keyPress) {
                     this.y += 83;
                 }
         break;
-    } 
+    }
 };
+
+Player.prototype.handleInput = control(keyPress);
+/*    switch(keyPress) {
+        case "left": if (this.x > 0) {
+            this.x -= 101;
+        }
+        break;
+        case "right": if (this.x < 606) {
+            this.x += 101;
+        }
+        break;
+        case "up":
+                if (this.y > 41.5) {
+                    this.y -=83;
+                }
+        else if (this.y < 83) {
+            this.score += 1;
+            alert("You Made It!" + " Score: " + this.score);
+            this.x = 202;
+            this.y = 539.5;
+        }
+        break;
+        case "down":
+                if (this.y < 539.5) {
+                    this.y += 83;
+                }
+        break;
+    } 
+}; */
 
 var Key = function() {
     this.sprite = 'images/Key.png';
@@ -124,11 +152,16 @@ but in this case I chose to use repeated if statements because the logic was eas
 for me to follow. */
 
 damsel.prototype.update = function(dt) {
+    var coupled;
     var rescueAttempt = Math.abs(player.x - this.x);
     if (rescueAttempt < 50.5 && this.y === player.y) {
         coupled = true;
         alert("Damsel in Distress: 'Please, help me cross the street!'");
-        this.x = player.x + 101;
+    }
+    if (coupled === true) {
+        this.prototype.handleInput = control(keyPress);
+    }
+/*        this.x = player.x + 101;
         this.y = player.y;
     }
     if (this.x === player.x && this.x < 606 && this.y === player.y) {
