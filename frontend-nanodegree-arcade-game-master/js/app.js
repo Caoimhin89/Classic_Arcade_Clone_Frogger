@@ -124,17 +124,10 @@ but in this case I chose to use repeated if statements because the logic was eas
 for me to follow. */
 
 damsel.prototype.update = function(dt) {
-    var coupled;
     var rescueAttempt = Math.abs(player.x - this.x);
     if (rescueAttempt < 50.5 && this.y === player.y) {
-        coupled = true;
         alert("Damsel in Distress: 'Please, help me cross the street!'");
-    }
-    if (coupled === true) {
-        this.prototype.handleInput = player.prototype.handleInput;
-    }
-    }
-/*        this.x = player.x + 101;
+        this.x = player.x + 101;
         this.y = player.y;
     }
     if (this.x === player.x && this.x < 606 && this.y === player.y) {
@@ -151,7 +144,7 @@ damsel.prototype.update = function(dt) {
     }
     if (this.y === player.y + 83 && this.x === player.x + 101) {
         this.y -= 83;
-    } */
+    }
     if (this.y < 83) {
             player.score += 1;
             alert("You saved the damsel in distress!" + " Score: " + player.score);
