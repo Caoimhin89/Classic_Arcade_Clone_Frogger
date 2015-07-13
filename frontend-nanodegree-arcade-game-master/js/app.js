@@ -126,7 +126,6 @@ for me to follow. */
 damsel.prototype.update = function(dt) {
     var rescueAttempt = Math.abs(player.x - this.x);
     if (rescueAttempt < 50.5 && this.y === player.y) {
-        coupled = true;
         alert("Damsel in Distress: 'Please, help me cross the street!'");
         this.x = player.x + 101;
         this.y = player.y;
